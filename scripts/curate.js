@@ -216,6 +216,8 @@ td a:hover{text-decoration:underline}
 .score.high{color:#0F6E56}
 .score.mid{color:#854F0B}
 .score.low{color:#888}
+.refresh-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:7px 16px;background:#2d8a4e;color:#fff;border-radius:8px;border:none;cursor:pointer;font-weight:500;margin-left:8px}
+.refresh-btn:disabled{background:#aaa;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -223,6 +225,35 @@ td a:hover{text-decoration:underline}
 <p class="meta">마지막 업데이트: ${kstNow} KST</p>
 <div class="stats">${statsHTML}</div>
 <a class="rss-link" href="feed.xml">RSS 피드 구독하기</a>
+<button class="refresh-btn" onclick="triggerRefresh()">🔄 새로고침</button>
+<script>
+async function triggerRefresh() {
+  const pw = prompt('비밀번호를 입력하세요:');
+  if (!pw) return;
+  const btn = document.querySelector('.refresh-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ 실행 중...';
+  try {
+    const res = await fetch('https://community-curator-trigger.kojy141234.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      alert('✅ 큐레이션 시작됐습니다! 약 1~2분 후 페이지를 새로고침하세요.');
+    } else if (res.status === 401) {
+      alert('❌ 비밀번호가 틀렸습니다.');
+    } else {
+      alert('❌ 오류: ' + JSON.stringify(data));
+    }
+  } catch (e) {
+    alert('❌ 요청 실패: ' + e.message);
+  }
+  btn.disabled = false;
+  btn.textContent = '🔄 새로고침';
+}
+</script>
 <p class="powered">✨ Powered by Gemini 1.5 Flash (무료)</p>
 <table>
   <thead>
