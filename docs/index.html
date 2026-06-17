@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>커뮤니티 AI 큐레이터</title>
+<style>
+body{font-family:-apple-system,sans-serif;max-width:980px;margin:0 auto;padding:2rem 1rem;color:#1a1a1a;background:#f8f8f5}
+h1{font-size:22px;margin-bottom:.4rem}
+.meta{font-size:13px;color:#888;margin-bottom:1rem}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem}
+.stat{font-size:12px;padding:4px 12px;border-radius:6px;border:1px solid #e0e0dc;background:#fff}
+.stat.ok{border-color:#B5D4B4;background:#F0FAF0}
+.stat.fail{border-color:#F4BCBC;background:#FFF0F0;color:#c0392b}
+.rss-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:7px 16px;background:#1a73e8;color:#fff;border-radius:8px;text-decoration:none;margin-bottom:1.5rem;font-weight:500}
+.powered{font-size:11px;color:#aaa;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+th{background:#1a1a1a;color:#fff;font-size:13px;font-weight:500;padding:10px 14px;text-align:left}
+td{font-size:13px;padding:10px 14px;border-bottom:1px solid #f0f0ec;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafaf8}
+td a{color:#185FA5;text-decoration:none}
+td a:hover{text-decoration:underline}
+.tag{font-size:11px;padding:2px 8px;border-radius:999px;background:#E6F1FB;color:#185FA5;white-space:nowrap}
+.score{font-weight:700;font-size:15px;white-space:nowrap}
+.score.high{color:#0F6E56}
+.score.mid{color:#854F0B}
+.score.low{color:#888}
+</style>
+</head>
+<body>
+<h1>🤖 커뮤니티 AI 큐레이터</h1>
+<p class="meta">마지막 업데이트: 2026. 6. 17. PM 10:46:08 KST</p>
+<div class="stats"><span class="stat ok">
+      ✅ 루리웹 유머베스트 15개
+    </span><span class="stat ok">
+      ✅ 뽐뿌 15개
+    </span><span class="stat fail">
+      ❌ 클리앙 수집 실패
+    </span></div>
+<a class="rss-link" href="feed.xml">RSS 피드 구독하기</a>
+<p class="powered">✨ Powered by Gemini 1.5 Flash (무료)</p>
+<table>
+  <thead>
+    <tr><th>제목</th><th>출처</th><th>태그</th><th>점수</th><th>AI 요약</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</body>
+</html>

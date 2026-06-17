@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>커뮤니티 AI 큐레이터 (루리웹·뽐뿌·클리앙)</title>
+    <link>https://your-username.github.io/community-curator</link>
+    <description>AI가 선별한 루리웹·뽐뿌·클리앙 인기글 (2026. 6. 17. PM 10:46:08 업데이트)</description>
+    <language>ko</language>
+    <lastBuildDate>Wed, 17 Jun 2026 13:46:08 GMT</lastBuildDate>
+    <atom:link href="https://your-username.github.io/community-curator/feed.xml" rel="self" type="application/rss+xml"/>
+    <ttl>60</ttl>
+
+  </channel>
+</rss>
