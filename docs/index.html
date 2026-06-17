@@ -26,11 +26,13 @@ td a:hover{text-decoration:underline}
 .score.high{color:#0F6E56}
 .score.mid{color:#854F0B}
 .score.low{color:#888}
+.refresh-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:7px 16px;background:#2d8a4e;color:#fff;border-radius:8px;border:none;cursor:pointer;font-weight:500;margin-left:8px}
+.refresh-btn:disabled{background:#aaa;cursor:not-allowed}
 </style>
 </head>
 <body>
 <h1>🤖 커뮤니티 AI 큐레이터</h1>
-<p class="meta">마지막 업데이트: 2026. 6. 17. PM 11:18:01 KST</p>
+<p class="meta">마지막 업데이트: 2026. 6. 17. PM 11:23:08 KST</p>
 <div class="stats"><span class="stat ok">
       ✅ 루리웹 유머베스트 15개
     </span><span class="stat ok">
@@ -39,6 +41,35 @@ td a:hover{text-decoration:underline}
       ❌ 클리앙 수집 실패
     </span></div>
 <a class="rss-link" href="feed.xml">RSS 피드 구독하기</a>
+<button class="refresh-btn" onclick="triggerRefresh()">🔄 새로고침</button>
+<script>
+async function triggerRefresh() {
+  const pw = prompt('비밀번호를 입력하세요:');
+  if (!pw) return;
+  const btn = document.querySelector('.refresh-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ 실행 중...';
+  try {
+    const res = await fetch('https://community-curator-trigger.kojy141234.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      alert('✅ 큐레이션 시작됐습니다! 약 1~2분 후 페이지를 새로고침하세요.');
+    } else if (res.status === 401) {
+      alert('❌ 비밀번호가 틀렸습니다.');
+    } else {
+      alert('❌ 오류: ' + JSON.stringify(data));
+    }
+  } catch (e) {
+    alert('❌ 요청 실패: ' + e.message);
+  }
+  btn.disabled = false;
+  btn.textContent = '🔄 새로고침';
+}
+</script>
 <p class="powered">✨ Powered by Gemini 1.5 Flash (무료)</p>
 <table>
   <thead>
@@ -46,106 +77,113 @@ td a:hover{text-decoration:underline}
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606646" target="_blank" rel="noopener">포켓몬) 쒸발 두드리짱은 참지않아요</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606709" target="_blank" rel="noopener">명조) 내아내들이면자러감</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606645" target="_blank" rel="noopener">직접 저격은 안하겠는데</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606708" target="_blank" rel="noopener">@) 오늘은 카구라 레이 생일입니다 ㅎㅎ</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606644" target="_blank" rel="noopener">프레퍼스 처음 가봤는데</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606707" target="_blank" rel="noopener">림버스) 내 아내임</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606643" target="_blank" rel="noopener">클로드 AI 요금제 높은거 쓰는 이유...</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606706" target="_blank" rel="noopener">내 친구가 세일러 머큐리,마스,비너스,주피터를 세일러문의 궁녀들이라고 비웃는다.</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606642" target="_blank" rel="noopener">말딸) 밤에 커피는 위험해요</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606705" target="_blank" rel="noopener">검열이요?</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606641" target="_blank" rel="noopener">아르헨티나 축구는 그냥 메시가 살려주고 있구만 ㅋㅋ</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606704" target="_blank" rel="noopener">버튜버)스바루: 위험한 놈 아니냐, 이자식(스바루)</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606640" target="_blank" rel="noopener">마 자라</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606703" target="_blank" rel="noopener">정부 차원에서 성적인 건 검열하는게 맞다고 생각하는 게</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606639" target="_blank" rel="noopener">@) 사슴눈나 7월달부터 짤 못올리겠네</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606702" target="_blank" rel="noopener">검열이 시행되면</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606638" target="_blank" rel="noopener">검열) 근데 방송, 통신만 들어가면 이렇게 내수 족치는게 많네</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606701" target="_blank" rel="noopener">명조) 너 자신을 돌아봐</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606637" target="_blank" rel="noopener">아니 검열 좀 이해가</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606700" target="_blank" rel="noopener">로아) 올 고대 코어 완료</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606636" target="_blank" rel="noopener">검열 얘기로 뜨거운 유게 건담 유머 한번 해보겠습니다.jpg</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606699" target="_blank" rel="noopener">예전에 아카 같은 사이트들 대놓고 국내법 안 지키니까 문제있다 생각했는데</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606635" target="_blank" rel="noopener">블루아카) 패스에서 주는 가구는 일반인은 못 먹지?</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606698" target="_blank" rel="noopener">신규 모바일 게임이 나올때마다 은근히 자주 발생하는 상황</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606634" target="_blank" rel="noopener">버튜버)스바루와 리오나입니다</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606697" target="_blank" rel="noopener">가사를 모르고 들어야 되는 노래</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606633" target="_blank" rel="noopener">갈포스 지구장 - Broken Heart</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606696" target="_blank" rel="noopener">개좃두 별명 중에 아라비안 나잇두가 제일 웃겨 ㅋㅋㅋㅋ</a></td>
       <td>루리웹 유머베스트</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
     </tr>
     <tr>
-      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606632" target="_blank" rel="noopener">다재무능)라노벨작가 복귀</a></td>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606695" target="_blank" rel="noopener">얘들아 언제나 그렇지만 이런 상황에 정떡 주의하자</a></td>
       <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712991" target="_blank" rel="noopener">[카카오] 신비복숭아 5kg 소과 (16,900원/무료)</a></td>
+      <td>뽐뿌</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
       <td>요약 불가</td>
@@ -194,13 +232,6 @@ td a:hover{text-decoration:underline}
     </tr>
     <tr>
       <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712984" target="_blank" rel="noopener">[G마켓] 신비복숭아 1kg 18과 내외 (10,900원/무배)</a></td>
-      <td>뽐뿌</td>
-      <td><span class="tag">기타</span></td>
-      <td class="score low">50</td>
-      <td>요약 불가</td>
-    </tr>
-    <tr>
-      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712983" target="_blank" rel="noopener">[쿠팡] 아넬르 자외선 차단 마스크 4개세트 (5,900원/무배)</a></td>
       <td>뽐뿌</td>
       <td><span class="tag">기타</span></td>
       <td class="score low">50</td>
