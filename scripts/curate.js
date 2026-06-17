@@ -30,7 +30,7 @@ const SOURCES = [
 ];
 
 const MAX_ITEMS_PER_SOURCE = 15;
-const MIN_AI_SCORE = 70;
+const MIN_AI_SCORE = 40;
 const MAX_FEED_ITEMS = 30;
 
 // ──────────────────────────────────────────
