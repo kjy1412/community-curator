@@ -26,13 +26,11 @@ td a:hover{text-decoration:underline}
 .score.high{color:#0F6E56}
 .score.mid{color:#854F0B}
 .score.low{color:#888}
-.refresh-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:7px 16px;background:#2d8a4e;color:#fff;border-radius:8px;border:none;cursor:pointer;font-weight:500;margin-bottom:1.5rem;margin-left:8px}
-.refresh-btn:disabled{background:#aaa;cursor:not-allowed}
 </style>
 </head>
 <body>
 <h1>🤖 커뮤니티 AI 큐레이터</h1>
-<p class="meta">마지막 업데이트: 2026. 6. 17. PM 10:46:08 KST</p>
+<p class="meta">마지막 업데이트: 2026. 6. 17. PM 11:18:01 KST</p>
 <div class="stats"><span class="stat ok">
       ✅ 루리웹 유머베스트 15개
     </span><span class="stat ok">
@@ -41,41 +39,222 @@ td a:hover{text-decoration:underline}
       ❌ 클리앙 수집 실패
     </span></div>
 <a class="rss-link" href="feed.xml">RSS 피드 구독하기</a>
-<button class="refresh-btn" onclick="triggerRefresh()">🔄 새로고침</button>
-<script>
-async function triggerRefresh() {
-  const pw = prompt('비밀번호를 입력하세요:');
-  if (!pw) return;
-  const btn = document.querySelector('.refresh-btn');
-  btn.disabled = true;
-  btn.textContent = '⏳ 실행 중...';
-  try {
-    const res = await fetch('https://community-curator-trigger.kojy141234.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: pw }),
-    });
-    const data = await res.json();
-    if (data.ok) {
-      alert('✅ 큐레이션 시작됐습니다! 약 1~2분 후 페이지를 새로고침하세요.');
-    } else if (res.status === 401) {
-      alert('❌ 비밀번호가 틀렸습니다.');
-    } else {
-      alert('❌ 오류: ' + JSON.stringify(data));
-    }
-  } catch (e) {
-    alert('❌ 요청 실패: ' + e.message);
-  }
-  btn.disabled = false;
-  btn.textContent = '🔄 새로고침';
-}
-</script>
 <p class="powered">✨ Powered by Gemini 1.5 Flash (무료)</p>
 <table>
   <thead>
     <tr><th>제목</th><th>출처</th><th>태그</th><th>점수</th><th>AI 요약</th></tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606646" target="_blank" rel="noopener">포켓몬) 쒸발 두드리짱은 참지않아요</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606645" target="_blank" rel="noopener">직접 저격은 안하겠는데</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606644" target="_blank" rel="noopener">프레퍼스 처음 가봤는데</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606643" target="_blank" rel="noopener">클로드 AI 요금제 높은거 쓰는 이유...</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606642" target="_blank" rel="noopener">말딸) 밤에 커피는 위험해요</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606641" target="_blank" rel="noopener">아르헨티나 축구는 그냥 메시가 살려주고 있구만 ㅋㅋ</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606640" target="_blank" rel="noopener">마 자라</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606639" target="_blank" rel="noopener">@) 사슴눈나 7월달부터 짤 못올리겠네</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606638" target="_blank" rel="noopener">검열) 근데 방송, 통신만 들어가면 이렇게 내수 족치는게 많네</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606637" target="_blank" rel="noopener">아니 검열 좀 이해가</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606636" target="_blank" rel="noopener">검열 얘기로 뜨거운 유게 건담 유머 한번 해보겠습니다.jpg</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606635" target="_blank" rel="noopener">블루아카) 패스에서 주는 가구는 일반인은 못 먹지?</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606634" target="_blank" rel="noopener">버튜버)스바루와 리오나입니다</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606633" target="_blank" rel="noopener">갈포스 지구장 - Broken Heart</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="https://bbs.ruliweb.com/community/board/300143/read/75606632" target="_blank" rel="noopener">다재무능)라노벨작가 복귀</a></td>
+      <td>루리웹 유머베스트</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712990" target="_blank" rel="noopener">[옥션]오리온 도도한 나초 사워크림어니언 92g x 12입 (10,720원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712989" target="_blank" rel="noopener">[네이버] 삼형제고기 한돈 돼지앞다리살 500g(6,900원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712988" target="_blank" rel="noopener">[11번가] 네파 브레보 쿠셔닝 워킹화 (47,890원 / 무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712987" target="_blank" rel="noopener">[옥션] 데일리코튼 롱 팬티라이너 81Px3팩 (12,960원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712986" target="_blank" rel="noopener">[옥션] 오리온 꼬북칩 말차초코 68g x 12입 (11,700원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712985" target="_blank" rel="noopener">[옥션] 닥터지 클리어 수딩 크림 30ml 5개 (21,980원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712984" target="_blank" rel="noopener">[G마켓] 신비복숭아 1kg 18과 내외 (10,900원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712983" target="_blank" rel="noopener">[쿠팡] 아넬르 자외선 차단 마스크 4개세트 (5,900원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712982" target="_blank" rel="noopener">[지마켓] 파워에이드 제로 무라벨 355ml 20페트 (12,980원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712981" target="_blank" rel="noopener">[롯데온] 경북 신비복숭아 2kg (13,020원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712980" target="_blank" rel="noopener">[G마켓]Aula 독거미 F108 pro 유무선 기계식 키보드 세이야축 8000mAh(52,900원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712979" target="_blank" rel="noopener">[네이버] 마니커 삼계 55호 530g 2봉+2봉 삼계탕용 (18,900원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712978" target="_blank" rel="noopener">[HIHI] 네파 남녀 공용 프리미아 패딩 롱구스다운 (149,630원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712976" target="_blank" rel="noopener">[G마켓] 비타플렉스 UV 스포츠 마스크 1+1 (7,920원/무배)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.ppomppu.co.kr/zboard/view.php?id=ppomppu&no=712975" target="_blank" rel="noopener">[네이버] 더레이디 바나티놀 톤업 선크림 50ml 3개 (15,900원/무료)</a></td>
+      <td>뽐뿌</td>
+      <td><span class="tag">기타</span></td>
+      <td class="score low">50</td>
+      <td>요약 불가</td>
+    </tr></tbody>
 </table>
 </body>
 </html>
